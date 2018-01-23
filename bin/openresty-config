@@ -12,9 +12,10 @@ CONF_BASE=/opt/openresty/nginx
 cd $CONF_BASE
 
 if [[ -d conf && ! -L conf ]]; then
-    mv -f conf conf.DEFAULT
+    sudo mv -f conf conf.DEFAULT
 fi
 
 echo "OpenResty config : $CONF_BASE/conf => $SRC_DIR/conf/nginx/$CONFIG_NAME"
 
-ln -sfT $SRC_DIR/conf/nginx/$CONFIG_NAME conf
+sudo ln -sfT $SRC_DIR/conf/nginx/$CONFIG_NAME conf
+sudo /etc/init.d/openresty restart
