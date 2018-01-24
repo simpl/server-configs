@@ -1,5 +1,5 @@
 
 server {
-    server_name  _;
-    return 301 http://simplresty.io;
+    server_name     _;
+    return 302      http://simplresty.io;
 }
